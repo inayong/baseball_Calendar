@@ -2,8 +2,8 @@ import React from 'react';
 
 const RenderHeader = ({ currentMonth }) => {
     return (
-        <div className='flex justify-between w-full items-center p-3'>
-            <div className='text-3xl'>{currentMonth.toLocaleString('ko-KR', { month: 'long' })}</div>
+        <div className='flex justify-center'>
+            <div className='text-3xl font-GiantsInline text-[#D00E31]'>{currentMonth.toLocaleString('en-US', { month: 'long' })}</div>
         </div>
     )
 }

@@ -4,6 +4,7 @@ import { ko } from 'date-fns/locale';
 import RenderDays from './RenderDays';
 import RenderHeader from './RenderHeader';
 import RenderCells from './RenderCells';
+import SkedButton from '../schedule/SkedButton';
 
 const Calendar = () => {
   const currentDate = new Date();
@@ -14,7 +15,7 @@ const Calendar = () => {
 
   for (let i = 0; i < 12; i++) {
     months.push(
-      <div>
+      <div className='space-y-10'>
         <RenderHeader currentMonth={currentMonth} />
         <RenderCells currentMonth={currentMonth} selectDate={selectDate} />
       </div>,
@@ -24,22 +25,24 @@ const Calendar = () => {
 
 
   return (
-    <div className='bg-slate-100 h-screen'>
-      <div className='bg-yellow-100 flex flex-col justify-center mx-40'>
-        <div className='p-10'>
-          <div className='bg-green-100 mb-3'>
-            <div className='flex justify-between w-full items-center p-3'>
-              <div>{format(currentDate, 'do', { locale: ko })}</div>
-              <div className='text-3xl'>{currentDate.toLocaleString('ko-KR', { month: 'long' })}</div>
-              <div>{format(currentDate, 'yyyy')}</div>
+    // <div className='bg-[#022345] h-screen'>
+    <div className='bg-white h-screen'>
+      <div className='bg-[#022345] flex flex-col justify-center lg:mx-40 md:mx-20'>
+        <div className='p-3 md:p-6 lg:p-10'>
+          <div className='bg-[#022345] fixed top-0 lg:left-40 lg:right-40 lg:h-20 lg:px-10 right-0 left-0 md:left-20 md:right-20'>
+            <div className='flex justify-between w-full items-center bg-[#022345] h-full'>
+              <div className='lg:pl-20 md:pl-16 pl-8 text-white font-TheJamsil5Bold lg:text-xl md:text-lg text-xs'>{format(currentDate, 'do', { locale: ko })}</div>
+              <div className='lg:text-4xl md:text-2xl text-lg text-white font-TheJamsil5Bold'>{currentDate.toLocaleString('ko-KR', { month: 'long' })}</div>
+              <div className='lg:pr-20 md:pr-16 pr-8 text-white font-TheJamsil5Bold lg:text-2xl md:text-lg text-base'>{format(currentDate, 'yyyy')}</div>
             </div>
           </div>
-          <div className='bg-orange-100 w-full'>
+          <div className='bg-[#022345] fixed lg:top-16 md:top-8 top-6 lg:left-40 md:left-24 left-3 lg:right-40 md:right-24 right-3 lg:h-8 md:h-5 h-3 lg:px-10 lg:pt-10 md:pt-8 pt-6'>
             <RenderDays />
           </div>
-          <div>{months}</div>
+          <div className='bg-white lg:pt-28 pt-16 space-y-6 flex flex-col w-full'>{months}</div>
         </div>
       </div>
+      <SkedButton />
     </div>
   )
 }

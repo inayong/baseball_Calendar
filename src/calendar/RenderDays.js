@@ -6,13 +6,13 @@ const RenderDays = () => {
 
     for (let i = 0; i < 7; i++) {
         days.push(
-            <div>
+            <div className='flex lg:w-1/6 md:w-1/2 w-5 max-[200px]:w-0 justify-center rounded-full bg-[#60B0E3] lg:mx-5 mx-4 font-bold lg:text-lg md:text-lg text-base'>
                 {date[i]}
             </div>,
         );
     }
   return (
-    <div className='flex justify-between'>{days}</div>
+    <div className='flex justify-between w-full bg-white h-full items-center'>{days}</div>
   )
 }
 
