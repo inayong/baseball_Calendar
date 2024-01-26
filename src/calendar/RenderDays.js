@@ -6,7 +6,7 @@ const RenderDays = () => {
 
     for (let i = 0; i < 7; i++) {
         days.push(
-            <div className='flex lg:w-1/6 md:w-1/2 w-5 max-[200px]:w-0 justify-center rounded-full bg-[#60B0E3] lg:mx-5 mx-4 font-bold lg:text-lg md:text-lg text-base'>
+            <div key={i} className='flex lg:w-1/6 md:w-1/2 w-5 max-[200px]:w-0 justify-center rounded-full bg-[#60B0E3] lg:mx-5 mx-4 font-bold lg:text-lg md:text-lg text-base'>
                 {date[i]}
             </div>,
         );

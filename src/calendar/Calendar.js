@@ -5,6 +5,7 @@ import RenderDays from './RenderDays';
 import RenderHeader from './RenderHeader';
 import RenderCells from './RenderCells';
 import SkedButton from '../schedule/SkedButton';
+import bbschedule from '../data/bbschedule.json';
 
 const Calendar = () => {
   const currentDate = new Date();
@@ -15,13 +16,15 @@ const Calendar = () => {
 
   for (let i = 0; i < 12; i++) {
     months.push(
-      <div className='space-y-10'>
+      <div key={i} className='space-y-10'>
         <RenderHeader currentMonth={currentMonth} />
-        <RenderCells currentMonth={currentMonth} selectDate={selectDate} />
+        <RenderCells currentMonth={currentMonth} selectDate={selectDate} bbschedule={bbschedule} />
       </div>,
     );
     currentMonth = addMonths(currentMonth, 1);
   }
+
+  console.log("data", bbschedule);
 
 
   return (
