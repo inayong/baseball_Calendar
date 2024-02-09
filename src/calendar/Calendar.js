@@ -34,8 +34,11 @@ const Calendar = () => {
         <div className='p-3 md:p-6 lg:p-10'>
           <div className='bg-[#022345] fixed top-0 lg:left-40 lg:right-40 lg:h-20 lg:px-10 right-0 left-0 md:left-20 md:right-20'>
             <div className='flex justify-between w-full items-center bg-[#022345] h-full'>
-              <div className='lg:pl-20 md:pl-16 pl-8 text-white font-TheJamsil5Bold lg:text-xl md:text-lg text-xs'>{format(currentDate, 'do', { locale: ko })}</div>
-              <div className='lg:text-4xl md:text-2xl text-lg text-white font-TheJamsil5Bold'>{currentDate.toLocaleString('ko-KR', { month: 'long' })}</div>
+              <div className='flex space-x-1 md:space-x-3 lg:pl-20 md:pl-16 pl-8 text-white font-TheJamsil5Bold lg:text-xl md:text-lg text-xs'>
+                <div>{currentDate.toLocaleString('ko-KR', { month: 'long' })}</div>
+                <div>{format(currentDate, 'do', { locale: ko })}</div>
+              </div>
+              <div className='lg:text-4xl md:text-2xl text-lg text-white font-TheJamsil5Bold'>달력</div>
               <div className='lg:pr-20 md:pr-16 pr-8 text-white font-TheJamsil5Bold lg:text-2xl md:text-lg text-base'>{format(currentDate, 'yyyy')}</div>
             </div>
           </div>

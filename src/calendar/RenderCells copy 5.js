@@ -1,6 +1,5 @@
-import { addDays, endOfMonth, endOfWeek, format, startOfMonth, startOfWeek, isSameDay, isSameMonth, toDate } from 'date-fns';
-import React, { useState } from 'react';
-import ScheduleList from '../schedule/ScheduleList';
+import { addDays, endOfMonth, endOfWeek, format, startOfMonth, startOfWeek, isSameDay, isSameMonth } from 'date-fns';
+import React from 'react';
 
 const RenderCells = ({ currentMonth, selectDate, bbschedule }) => {
     const monthStart = startOfMonth(currentMonth);
@@ -13,18 +12,6 @@ const RenderCells = ({ currentMonth, selectDate, bbschedule }) => {
     let day = startDate;
     let formatDate = '';
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [clickDate, setClickDate] = useState(null);
-    const handleDayClick = (clickedDate) => {
-        // const toDateClick = toDate(clickedDate);
-        // setClickDate(toDateClick);
-        setClickDate(clickedDate);
-        setIsModalOpen(true);
-        console.log('click', clickedDate);
-    }
-    
-    
-
     while (day <= endDate) {
         for (let i = 0; i < 7; i++) {
             formatDate = format(day, 'd');
@@ -33,13 +20,14 @@ const RenderCells = ({ currentMonth, selectDate, bbschedule }) => {
                 const scheduleDate = format(new Date(schedule.date), 'M-dd');
                 return scheduleDate === dateKey;
             });
+            // console.log("for", dateKey)
+            // console.log("issame", dateKey, eventForDay)
+            // console.log("sameday", isSameDay(day, selectDate))
+            // console.log("dataaa", bbschedule.map(i => i.date))
+            // console.log("same", bbschedule.find(schedule => schedule.date === dateKey))
 
-            // console.log('day', day)
-            // console.log("clickDate", clickDate)
             days.push(
-                <div key={i} 
-                onClick={() => handleDayClick(dateKey)}
-                className={`flex w-1/6 lg:h-32 md:h-28 h-20 justify-center hover:bg-yellow-200 ${!isSameMonth(day, monthStart) ? 'text-gray-500 bg-transparent' : ''} ${isSameDay(day, selectDate) ? 'bg-blue-100 rounded-md' : ''} `}>
+                <div key={i} className={`flex w-1/6 lg:h-32 md:h-28 h-20 justify-center hover:bg-yellow-200 ${!isSameMonth(day, monthStart) ? 'text-gray-500 bg-transparent' : ''} ${isSameDay(day, selectDate) ? 'bg-blue-100 rounded-md' : ''} `}>
                     <div>
                         <span className={`text-xs md:text-base lg:text-lg flex justify-center ${isSameDay(day, selectDate) ? 'underline underline-offset-4 text-lg' : ''}`}>
                             {formatDate}
@@ -65,12 +53,8 @@ const RenderCells = ({ currentMonth, selectDate, bbschedule }) => {
         );
         days = [];
     }
-
     return (
-        <div className='flex flex-col font-TheJamsil5Bold'>
-            {rows}
-            {isModalOpen && <ScheduleList setIsModalOpen={setIsModalOpen} date={clickDate} />}
-        </div>
+        <div className='flex flex-col font-TheJamsil5Bold'>{rows}</div>
     )
 }
 
