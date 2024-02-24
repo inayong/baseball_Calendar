@@ -1,6 +1,5 @@
 ## 야구달력
-![giants-Calendar](https://i.ibb.co/6D7jZpT/giants-Calendar.png)
-![giants-Calendar2](https://i.ibb.co/wK2T7sn/2024-02-24-213818.png)
+![giants-Calendar](https://i.ibb.co/WKGz6vQ/calscreen.png)
 
 
 
@@ -23,4 +22,4 @@
 - [x] 오늘 날짜 표시 중복 제거 (1월 31일인데 2월달에있는 1월31일에도 배경색나옴)
 - [ ] 달력 누르면 오늘 날짜로 이동하기
 - [x] 메인 페이지
-- [] 메인 페이지로 이동하는 버튼 만들기
+- [ ] 메인 페이지로 이동하는 버튼 만들기
