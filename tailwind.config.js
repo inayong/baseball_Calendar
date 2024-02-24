@@ -6,6 +6,9 @@ module.exports = {
     fontFamily: {
       GiantsInline: ["Giants-Inline"],
       TheJamsil5Bold: ["TheJamsil5Bold"],
+      PermanentMarker: ['"Permanent Marker"', "cursive"],
+      EFjejudoldam: ["EF_jejudoldam"],
+      GiantsBold: ["Giants-Bold"],
     }
   },
   plugins: [],

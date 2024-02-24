@@ -1,7 +1,10 @@
 ## 야구달력
-<img src="https://i.ibb.co/6D7jZpT/giants-Calendar.png" alt="giants-Calendar" border="0">
+![giants-Calendar](https://i.ibb.co/6D7jZpT/giants-Calendar.png)
+![giants-Calendar2](https://i.ibb.co/wK2T7sn/2024-02-24-213818.png)
 
-### 해야 할 것
+
+
+### 해야 할 것 및 한 것
 - [x] 야구 일정 표시하기
     - [ ] 중복 일정 어떻게 표시할지 정하기
 - [ ] 일정 추가 기능
@@ -16,5 +19,8 @@
 - [ ] drag & drop(?)
 - [ ] 일기 작성 페이지(?)
 - [ ] 메모장
-- [ ] firebase hosting
+- [ ] firebase hosting or git
 - [x] 오늘 날짜 표시 중복 제거 (1월 31일인데 2월달에있는 1월31일에도 배경색나옴)
+- [ ] 달력 누르면 오늘 날짜로 이동하기
+- [x] 메인 페이지
+- [] 메인 페이지로 이동하는 버튼 만들기
