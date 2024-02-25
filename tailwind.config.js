@@ -9,6 +9,7 @@ module.exports = {
       PermanentMarker: ['"Permanent Marker"', "cursive"],
       EFjejudoldam: ["EF_jejudoldam"],
       GiantsBold: ["Giants-Bold"],
+      NanumSquareNeo: ["NanumSquareNeo-Variable"],
     }
   },
   plugins: [],
